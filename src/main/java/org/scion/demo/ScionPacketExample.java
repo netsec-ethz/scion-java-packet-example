@@ -22,7 +22,6 @@ import java.nio.ByteBuffer;
 
 public class ScionPacketExample {
     public static void main(String[] args) throws IOException {
-        System.setProperty(Constants.PROPERTY_DNS_SEARCH_DOMAINS, "ethz.ch.");
         long dstIsdAs = ScionUtil.parseIA("64-2:0:9");
         InetAddress ip = InetAddress.getByName("129.132.175.104");
         Path path = Scion.defaultService().getPaths(dstIsdAs, ip, Constants.SCMP_PORT).get(0);
@@ -30,7 +29,7 @@ public class ScionPacketExample {
         try (ScionDatagramChannel channel = ScionDatagramChannel.open()) {
             channel.configureBlocking(true);
             channel.connect(path);
-            ByteBuffer sendBuf = ByteBuffer.wrap("Hello there! Hello!".getBytes());
+            ByteBuffer sendBuf = ByteBuffer.wrap("Hello there!".getBytes());
             channel.write(sendBuf);
             PathMetadata meta = channel.getConnectionPath().getMetadata();
             System.out.println("Sent via path: " + ScionUtil.toStringPath(meta));
