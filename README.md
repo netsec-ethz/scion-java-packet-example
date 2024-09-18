@@ -1,9 +1,6 @@
-# scion-java-packet-example
+# SCION Java send packet example
 
 This is a simple example project that uses [JPAN](https://github.com/scionproto-contrib/jpan) to send a packet to the [SCION packet analyzer](https://echoscion.ddns.net/).
-
-
-
 
 # Troubleshooting
 
