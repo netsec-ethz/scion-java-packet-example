@@ -6,7 +6,7 @@
 
     <groupId>org.scion</groupId>
     <artifactId>scion-packet-example</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -297,6 +297,7 @@
                                             <excludes>
                                                 <exclude>**/module-info.class</exclude>
                                                 <exclude>META-INF/versions/**</exclude>
+                                                <exclude>META-INF/services/java.net.spi.InetAddressResolverProvider</exclude>
                                             </excludes>
                                         </filter>
                                     </filters>
