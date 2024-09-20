@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
  
 - Nothing
 
+## [0.1.2] - 2024-09-20
+
+### Fixed
+- Proper multi-release jar. [#2](https://github.com/netsec-ethz/scion-java-packet-example/pull/2)
+
 ## [0.1.1] - 2024-09-18
 
 ### Added
@@ -29,6 +34,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Initial release
 
 
-[Unreleased]: https://github.com/netsec-ethz/scion-java-packet-example/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/netsec-ethz/scion-java-packet-example/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/netsec-ethz/scion-java-packet-example/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/netsec-ethz/scion-java-packet-example/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/netsec-ethz/scion-java-packet-example/compare/init_root_commit...v0.1.0
