@@ -6,7 +6,7 @@
 
     <groupId>org.scion</groupId>
     <artifactId>scion-packet-example</artifactId>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -269,6 +269,7 @@
                                 </goals>
                                 <configuration>
                                     <shadedArtifactAttached>true</shadedArtifactAttached>
+                                    <shadedClassifierName>executable</shadedClassifierName>
                                     <transformers>
                                         <transformer
                                                 implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
