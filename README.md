@@ -16,3 +16,7 @@ This happens, for example, on Windows when using a VPN. One solution is to execu
 ```
 java -Dorg.scion.dnsSearchDomains=ethz.ch. -jar scion-packet-example-0.1.0-shaded.jar
 ```
+
+**NOTE** This workaround is not available in JPAN 0.2.0, it requires the latest master branch.
+However, the executable jar is build with the latest master, so the problem occurs
+only if you build the project yourself.
