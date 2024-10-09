@@ -242,7 +242,7 @@
             </build>
         </profile>
         <profile>
-            <id>shaded-packet-example</id>
+            <id>create-executable-example</id>
             <build>
                 <plugins>
                     <plugin>
