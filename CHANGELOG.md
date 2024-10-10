@@ -8,7 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
  
-- Nothing
+### Changed
+- README update [#4](https://github.com/netsec-ethz/scion-java-packet-example/pull/4)
+
+## [0.1.3] - 2024-10-09
+
+### Changed
+- UPdated dependency to JPAN 0.3.0. [#3](https://github.com/netsec-ethz/scion-java-packet-example/pull/3)
 
 ## [0.1.2] - 2024-09-20
 
@@ -34,7 +40,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Initial release
 
 
-[Unreleased]: https://github.com/netsec-ethz/scion-java-packet-example/compare/v0.1.2...HEAD
+[Unreleased]: https://github.com/netsec-ethz/scion-java-packet-example/compare/v0.1.3...HEAD
+[0.1.3]: https://github.com/netsec-ethz/scion-java-packet-example/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/netsec-ethz/scion-java-packet-example/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/netsec-ethz/scion-java-packet-example/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/netsec-ethz/scion-java-packet-example/compare/init_root_commit...v0.1.0
