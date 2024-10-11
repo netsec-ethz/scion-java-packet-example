@@ -46,7 +46,7 @@ java -Dorg.scion.dnsSearchDomains=<search domain> -jar scion-packet-example-<ver
 You can directly set the IP:port of the discovery server:
 
 ```
-java -Dorg.scion.bootstrap.host=<IP of boostrap server:8041> -jar scion-packet-example-<version>-executable.jar
+java -Dorg.scion.bootstrap.host=<IP of bootstrap server:8041> -jar scion-packet-example-<version>-executable.jar
 ```
 
 ### Solution #3: Provide a topology file
