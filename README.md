@@ -36,7 +36,7 @@ You can execute the jar with the following property (on example of a search doma
 only when you are in that very domain):
 
 ```
-java -Dorg.scion.dnsSearchDomains=<serch domain> -jar scion-packet-example-<version>-executable.jar
+java -Dorg.scion.dnsSearchDomains=<search domain> -jar scion-packet-example-<version>-executable.jar
 ```
 
 **NOTE** This workaround requires JPAN 0.3.0 or later.
