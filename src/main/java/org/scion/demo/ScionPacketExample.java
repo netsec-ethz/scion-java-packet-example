@@ -14,25 +14,23 @@
 
 package org.scion.demo;
 
-import org.scion.jpan.*;
-
 import java.io.IOException;
 import java.net.InetAddress;
 import java.nio.ByteBuffer;
+import org.scion.jpan.*;
 
 public class ScionPacketExample {
-    public static void main(String[] args) throws IOException {
-        long dstIsdAs = ScionUtil.parseIA("64-2:0:9");
-        InetAddress ip = InetAddress.getByName("129.132.175.104");
-        Path path = Scion.defaultService().getPaths(dstIsdAs, ip, Constants.SCMP_PORT).get(0);
-
-        try (ScionDatagramChannel channel = ScionDatagramChannel.open()) {
-            channel.configureBlocking(true);
-            channel.connect(path);
-            ByteBuffer sendBuf = ByteBuffer.wrap("Hello there!".getBytes());
-            channel.write(sendBuf);
-            PathMetadata meta = channel.getConnectionPath().getMetadata();
-            System.out.println("Sent via path: " + ScionUtil.toStringPath(meta));
-        }
+  public static void main(String[] args) throws IOException {
+    // send to https://scionpacketinspector.netsec.ethz.ch/
+    long dstIsdAs = ScionUtil.parseIA("64-2:0:9");
+    InetAddress dstIP = InetAddress.getByName("129.132.175.104");
+    Path path = Scion.defaultService().getPaths(dstIsdAs, dstIP, Constants.SCMP_PORT).get(0);
+    try (ScionDatagramChannel channel = ScionDatagramChannel.open()) {
+      channel.connect(path);
+      ByteBuffer sendBuf = ByteBuffer.wrap("Hello there!".getBytes());
+      channel.write(sendBuf);
+      PathMetadata meta = channel.getConnectionPath().getMetadata();
+      System.out.println("Sent via path: " + ScionUtil.toStringPath(meta));
     }
+  }
 }
