@@ -1,6 +1,9 @@
-# SCION Java send packet example
+# SCION Java examples
 
-This is a simple example project that uses [JPAN](https://github.com/scionproto-contrib/jpan) to send a packet to
+## Send packet example
+
+This is a simple example project that uses [JPAN](https://github.com/scionproto-contrib/jpan) to
+send a packet to
 the [SCION packet analyzer](https://echoscion.ddns.net/).
 
 The easiest way to execute the example is
@@ -12,6 +15,12 @@ execute it from command line:
 java -jar scion-packet-example-0.1.3-executable.jar
 ```
 
+## Other examples
+
+The project contains other examples, but they do not come with an executable jat file:
+
+* [Custom path policy example](src/main/java/org/scion/demo/ScionPathPolicyExample.java)
+
 # Building your own executable jar
 
 You can build your own executable jar file with
@@ -20,7 +29,8 @@ You can build your own executable jar file with
 mvn clean package -Pcreate-executable-example
 ```
 
-This creates a file `scion-packet-example-0.1.4-SNAPSHOT-executable.jar` (note the `-executable`) in `target/`.
+This creates a file `scion-packet-example-0.1.4-SNAPSHOT-executable.jar` (note the `-executable`) in
+`target/`.
 
 # Troubleshooting
 
@@ -32,7 +42,8 @@ There are several solutions to this (aside from reconfiguring your system).
 ### Solution #1: Provide search domain
 
 This is useful if you have access to a search domain with a NAPTR record of the discovery server.
-You can execute the jar with the following property (on example of a search domain is `ethz.ch.` but it obviously works
+You can execute the jar with the following property (on example of a search domain is `ethz.ch.` but
+it obviously works
 only when you are in that very domain):
 
 ```
