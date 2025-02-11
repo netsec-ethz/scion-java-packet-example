@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
  
 ### Changed
 - README update [#4](https://github.com/netsec-ethz/scion-java-packet-example/pull/4)
+- Simplified examples and update to 0.4.1 [#7](https://github.com/netsec-ethz/scion-java-packet-example/pull/7)
 
 ### Fixed
 - Suppress warning when parsing /etc/hosts file with SCION addresses
