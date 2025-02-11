@@ -22,6 +22,10 @@ import org.scion.jpan.*;
 public class ScionPacketExample {
   public static void main(String[] args) throws IOException {
     // send to https://scionpacketinspector.netsec.ethz.ch/
+    // This requires the URL to have a "scion" TXT entry, e.g.
+    // $ dig +short TXT scionpacketinspector.netsec.ethz.ch
+    //   netsec-ac3914.inf.ethz.ch.
+    //   "scion=64-2:0:9,129.132.175.104"
     InetSocketAddress addr = new InetSocketAddress("scionpacketinspector.netsec.ethz.ch", 30041);
 
     try (ScionDatagramChannel channel = ScionDatagramChannel.open()) {
