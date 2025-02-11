@@ -31,7 +31,7 @@ public class ScionPathPolicyExample {
   public static void main(String[] args) throws IOException {
     long dstIsdAs = ScionUtil.parseIA("64-2:0:9");
     InetAddress ip = InetAddress.getByName("129.132.175.104");
-    Path path = Scion.defaultService().getPaths(dstIsdAs, ip, Constants.SCMP_PORT).get(0);
+    Path path = Scion.defaultService().getPaths(dstIsdAs, ip, 30041).get(0);
 
     try (ScionDatagramChannel channel = ScionDatagramChannel.open()) {
       channel.setPathPolicy(new OnlySwitzerland());

@@ -15,18 +15,21 @@
 package org.scion.demo;
 
 import java.io.IOException;
-import java.net.InetSocketAddress;
+import java.net.InetAddress;
 import java.nio.ByteBuffer;
 import org.scion.jpan.*;
 
-public class ScionPacketExample {
+public class ScionPathExample {
   public static void main(String[] args) throws IOException {
     // send to https://scionpacketinspector.netsec.ethz.ch/
-    InetSocketAddress addr = new InetSocketAddress("scionpacketinspector.netsec.ethz.ch", 30041);
+    long dstIsdAs = ScionUtil.parseIA("64-2:0:9");
+    InetAddress dstIP = InetAddress.getByName("129.132.175.104");
+    Path path = Scion.defaultService().getPaths(dstIsdAs, dstIP, 30041).get(0);
 
     try (ScionDatagramChannel channel = ScionDatagramChannel.open()) {
-      channel.connect(addr);
-      channel.write(ByteBuffer.wrap("Hello there!".getBytes()));
+      channel.connect(path);
+      ByteBuffer sendBuf = ByteBuffer.wrap("Hello there!".getBytes());
+      channel.write(sendBuf);
       PathMetadata meta = channel.getConnectionPath().getMetadata();
       System.out.println("Sent via path: " + ScionUtil.toStringPath(meta));
     }
