@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.nio.ByteBuffer;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.scion.jpan.*;
 
 /**
@@ -47,13 +48,8 @@ public class ScionPathPolicyExample {
    */
   private static class OnlySwitzerland implements PathPolicy {
     @Override
-    public Path filter(List<Path> paths) {
-      for (Path path : paths) {
-        if (isPathOkay(path)) {
-          return path;
-        }
-      }
-      throw new IllegalStateException("No matching path found.");
+    public List<Path> filter(List<Path> paths) {
+      return paths.stream().filter(this::isPathOkay).collect(Collectors.toList());
     }
 
     private boolean isPathOkay(Path path) {
