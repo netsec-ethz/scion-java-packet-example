@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Path policy example [#5](https://github.com/netsec-ethz/scion-java-packet-example/pull/5)
 - Ping-pong examples [#8](https://github.com/netsec-ethz/scion-java-packet-example/pull/8)
+- Custom message + some docs [#10](https://github.com/netsec-ethz/scion-java-packet-example/pull/10)
  
 ### Changed
 - README update [#4](https://github.com/netsec-ethz/scion-java-packet-example/pull/4)

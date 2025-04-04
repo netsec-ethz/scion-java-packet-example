@@ -21,16 +21,16 @@ import org.scion.jpan.*;
 
 public class ScionPacketExample {
   public static void main(String[] args) throws IOException {
+    String message = args.length == 0 ? "Hello there!" : args[0];
     // send to https://scionpacketinspector.netsec.ethz.ch/
     // This requires the URL to have a "scion" TXT entry, e.g.
     // $ dig +short TXT scionpacketinspector.netsec.ethz.ch
     //   netsec-ac3914.inf.ethz.ch.
     //   "scion=64-2:0:9,129.132.175.104"
     InetSocketAddress addr = new InetSocketAddress("scionpacketinspector.netsec.ethz.ch", 30041);
-
     try (ScionDatagramChannel channel = ScionDatagramChannel.open()) {
       channel.connect(addr);
-      channel.write(ByteBuffer.wrap("Hello there!".getBytes()));
+      channel.write(ByteBuffer.wrap(message.getBytes()));
       PathMetadata meta = channel.getConnectionPath().getMetadata();
       System.out.println("Sent via path: " + ScionUtil.toStringPath(meta));
     }
