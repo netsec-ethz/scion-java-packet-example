@@ -6,17 +6,17 @@ This is a simple example project that uses [JPAN](https://github.com/scionproto-
 send a packet to the [SCION packet analyzer](https://echoscion.ddns.net/).
 
 The easiest way to execute the example is
-to [download the stand-alone jar file](https://github.com/netsec-ethz/scion-java-packet-example/releases/download/v0.1.3/scion-packet-example-0.1.3-executable.jar)
+to [download the stand-alone jar file](https://github.com/netsec-ethz/scion-java-packet-example/releases/download/v0.2.0/scion-packet-example-0.2.0-executable.jar)
 and execute it from command line:
 
 ```
-java -jar scion-packet-example-0.1.3-executable.jar
+java -jar scion-packet-example-0.2.0-executable.jar
 ```
 
 You can also send a custom message string with
 
 ```
-java -jar scion-packet-example-0.1.3-executable.jar "A better message"
+java -jar scion-packet-example-0.2.0-executable.jar "A better message"
 ```
 
 ## Other examples
@@ -39,7 +39,7 @@ You can build your own executable jar file with
 mvn clean package -Pcreate-executable-example
 ```
 
-This creates a file `scion-packet-example-0.1.4-SNAPSHOT-executable.jar` (note the `-executable`) in
+This creates a file `scion-packet-example-0.2.1-SNAPSHOT-executable.jar` (note the `-executable`) in
 `target/`.
 
 # Troubleshooting
