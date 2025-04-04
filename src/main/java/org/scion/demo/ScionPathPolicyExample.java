@@ -30,13 +30,14 @@ public class ScionPathPolicyExample {
   private static final int ISD_SWITZERLAND = 64;
 
   public static void main(String[] args) throws IOException {
+    String message = args.length == 0 ? "Hello there!" : args[0];
     long dstIsdAs = ScionUtil.parseIA("64-2:0:9");
     InetAddress ip = InetAddress.getByName("129.132.175.104");
     Path path = Scion.defaultService().getPaths(dstIsdAs, ip, 30041).get(0);
 
     try (ScionDatagramChannel channel = ScionDatagramChannel.open()) {
       channel.setPathPolicy(new OnlySwitzerland());
-      ByteBuffer sendBuf = ByteBuffer.wrap("Hello there!".getBytes());
+      ByteBuffer sendBuf = ByteBuffer.wrap(message.getBytes());
       channel.send(sendBuf, path);
       System.out.println("Sent via path: " + ScionUtil.toStringPath(path.getMetadata()));
     }
@@ -55,6 +56,7 @@ public class ScionPathPolicyExample {
     private boolean isPathOkay(Path path) {
       for (PathMetadata.PathInterface pif : path.getMetadata().getInterfacesList()) {
         int isd = ScionUtil.extractIsd(pif.getIsdAs());
+        // Reject any path that goes outside Switzerland's ISD
         if (isd != ISD_SWITZERLAND) {
           return false;
         }
