@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.2.0] - 2025-04-04
+
 ### Added
 - Path policy example [#5](https://github.com/netsec-ethz/scion-java-packet-example/pull/5)
 - Ping-pong examples [#8](https://github.com/netsec-ethz/scion-java-packet-example/pull/8)
@@ -51,7 +53,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Initial release
 
 
-[Unreleased]: https://github.com/netsec-ethz/scion-java-packet-example/compare/v0.1.3...HEAD
+[Unreleased]: https://github.com/netsec-ethz/scion-java-packet-example/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/netsec-ethz/scion-java-packet-example/compare/v0.1.3...v0.2.0
 [0.1.3]: https://github.com/netsec-ethz/scion-java-packet-example/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/netsec-ethz/scion-java-packet-example/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/netsec-ethz/scion-java-packet-example/compare/v0.1.0...v0.1.1
