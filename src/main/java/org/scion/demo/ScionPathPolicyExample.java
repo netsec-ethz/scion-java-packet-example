@@ -19,6 +19,7 @@ import java.net.InetAddress;
 import java.nio.ByteBuffer;
 import java.util.List;
 import java.util.stream.Collectors;
+
 import org.scion.jpan.*;
 
 /**
@@ -30,6 +31,9 @@ public class ScionPathPolicyExample {
   private static final int ISD_SWITZERLAND = 64;
 
   public static void main(String[] args) throws IOException {
+    if (args.length == 0) {
+      System.out.println("You can add a custom message as argument to the executable.");
+    }
     String message = args.length == 0 ? "Hello there!" : args[0];
     long dstIsdAs = ScionUtil.parseIA("64-2:0:9");
     InetAddress ip = InetAddress.getByName("129.132.175.104");
@@ -39,7 +43,7 @@ public class ScionPathPolicyExample {
       channel.setPathPolicy(new OnlySwitzerland());
       ByteBuffer sendBuf = ByteBuffer.wrap(message.getBytes());
       channel.send(sendBuf, path);
-      System.out.println("Sent via path: " + ScionUtil.toStringPath(path.getMetadata()));
+      System.out.println("The packet was sent via path: " + ScionUtil.toStringPath(path.getMetadata()));
     }
   }
 

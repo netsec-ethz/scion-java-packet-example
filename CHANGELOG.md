@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+- Improved console output [#12](https://github.com/netsec-ethz/scion-java-packet-example/pull/12)
+
 ## [0.2.0] - 2025-04-04
 
 ### Added

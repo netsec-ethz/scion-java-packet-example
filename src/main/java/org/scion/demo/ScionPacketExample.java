@@ -21,6 +21,9 @@ import org.scion.jpan.*;
 
 public class ScionPacketExample {
   public static void main(String[] args) throws IOException {
+    if (args.length == 0) {
+      System.out.println("You can add a custom message as argument to the executable.");
+    }
     String message = args.length == 0 ? "Hello there!" : args[0];
     // send to https://scionpacketinspector.netsec.ethz.ch/
     // This requires the URL to have a "scion" TXT entry, e.g.
@@ -32,7 +35,8 @@ public class ScionPacketExample {
       channel.connect(addr);
       channel.write(ByteBuffer.wrap(message.getBytes()));
       PathMetadata meta = channel.getConnectionPath().getMetadata();
-      System.out.println("Sent via path: " + ScionUtil.toStringPath(meta));
+      System.out.println("The packet was sent via path: " + ScionUtil.toStringPath(meta));
     }
+    System.out.println("The packet was sent to: https://scionpacketinspector.netsec.ethz.ch/");
   }
 }
