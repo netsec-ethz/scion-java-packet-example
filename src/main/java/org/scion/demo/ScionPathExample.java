@@ -21,6 +21,9 @@ import org.scion.jpan.*;
 
 public class ScionPathExample {
   public static void main(String[] args) throws IOException {
+    if (args.length == 0) {
+      System.out.println("You can add a custom message as argument to the executable.");
+    }
     String message = args.length == 0 ? "Hello there!" : args[0];
     // send to https://scionpacketinspector.netsec.ethz.ch/
     long dstIsdAs = ScionUtil.parseIA("64-2:0:9");
@@ -32,7 +35,8 @@ public class ScionPathExample {
       ByteBuffer sendBuf = ByteBuffer.wrap(message.getBytes());
       channel.write(sendBuf);
       PathMetadata meta = channel.getConnectionPath().getMetadata();
-      System.out.println("Sent via path: " + ScionUtil.toStringPath(meta));
+      System.out.println("The packet was sent via path: " + ScionUtil.toStringPath(meta));
     }
+    System.out.println("The packet was sent to: https://scionpacketinspector.netsec.ethz.ch/");
   }
 }
