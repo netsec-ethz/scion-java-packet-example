@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Improved console output [#12](https://github.com/netsec-ethz/scion-java-packet-example/pull/12)
 
+### Changed
+- Bump JPAN to 0.6.1-SNAPSHOT with SOA/SRV support and improved IP detection. 
+  [#13](https://github.com/netsec-ethz/scion-java-packet-example/pull/13)
+
 ## [0.2.0] - 2025-04-04
 
 ### Added
