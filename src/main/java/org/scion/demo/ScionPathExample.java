@@ -17,6 +17,8 @@ package org.scion.demo;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.nio.ByteBuffer;
+import java.util.List;
+
 import org.scion.jpan.*;
 
 public class ScionPathExample {
@@ -28,10 +30,15 @@ public class ScionPathExample {
     // send to https://scionpacketinspector.netsec.ethz.ch/
     long dstIsdAs = ScionUtil.parseIA("64-2:0:9");
     InetAddress dstIP = InetAddress.getByName("129.132.175.104");
-    Path path = Scion.defaultService().getPaths(dstIsdAs, dstIP, 30041).get(0);
+    List<Path> paths = Scion.defaultService().getPaths(dstIsdAs, dstIP, 30041);
+    if (paths.isEmpty()) {
+      System.out.println("No paths found to: https://scionpacketinspector.netsec.ethz.ch/");
+      System.out.println("  (using address: 64-2:0:9,129.132.175.104)");
+      return;
+    }
 
     try (ScionDatagramChannel channel = ScionDatagramChannel.open()) {
-      channel.connect(path);
+      channel.connect(paths.get(0));
       ByteBuffer sendBuf = ByteBuffer.wrap(message.getBytes());
       channel.write(sendBuf);
       PathMetadata meta = channel.getConnectionPath().getMetadata();
