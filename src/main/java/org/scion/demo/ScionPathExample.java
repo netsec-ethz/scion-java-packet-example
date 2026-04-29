@@ -18,7 +18,6 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.nio.ByteBuffer;
 import java.util.List;
-
 import org.scion.jpan.*;
 
 public class ScionPathExample {
