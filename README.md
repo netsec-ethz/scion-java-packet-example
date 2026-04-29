@@ -6,17 +6,17 @@ This is a simple example project that uses [JPAN](https://github.com/scionproto-
 send a packet to the [SCION packet analyzer](https://scionpacketinspector.netsec.ethz.ch).
 
 The easiest way to execute the example is
-to [download the stand-alone jar file](https://github.com/netsec-ethz/scion-java-packet-example/releases/download/v0.3.0/scion-packet-example-0.3.0-executable.jar)
+to [download the stand-alone jar file](https://github.com/netsec-ethz/scion-java-packet-example/releases/download/v0.4.0/scion-packet-example-0.4.0-executable.jar)
 and execute it from command line:
 
 ```
-java -jar scion-packet-example-0.3.0-executable.jar
+java -jar scion-packet-example-0.4.0-executable.jar
 ```
 
 You can also send a custom message string with
 
 ```
-java -jar scion-packet-example-0.3.0-executable.jar "A better message"
+java -jar scion-packet-example-0.4.0-executable.jar "A better message"
 ```
 
 ## Other examples
