@@ -12,9 +12,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <scion.slf4j.version>2.0.17</scion.slf4j.version>
-        <scion.maven-enforcer-plugin.version>3.3.0</scion.maven-enforcer-plugin.version>
-        <scion.fmt-maven.version>2.23</scion.fmt-maven.version>
-        <scion.maven-surefire-plugin.version>3.0.0</scion.maven-surefire-plugin.version>
+        <scion.maven-enforcer-plugin.version>3.6.2</scion.maven-enforcer-plugin.version>
+        <scion.fmt-maven.version>2.29</scion.fmt-maven.version>
     </properties>
 
     <name>SCION Java API Examples</name>
@@ -71,20 +70,20 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.14.1</version>
+            <version>5.14.4</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>com.google.googlejavaformat</groupId>
             <artifactId>google-java-format</artifactId>
-            <version>1.33.0</version>
+            <version>1.35.0</version>
         </dependency>
 
         <dependency>
             <groupId>org.scion</groupId>
             <artifactId>jpan</artifactId>
-            <version>0.6.1</version>
+            <version>0.7.0</version>
         </dependency>
     </dependencies>
 
@@ -92,7 +91,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
+                <version>3.15.0</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
@@ -101,7 +100,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.3.0</version>
+                <version>3.6.0</version>
                 <executions>
                     <execution>
                         <id>validate</id>
@@ -124,12 +123,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version>
+                <version>3.5.5</version>
             </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.12</version>
+                <version>0.8.14</version>
                 <executions>
                     <execution>
                         <id>prepare-agent</id>

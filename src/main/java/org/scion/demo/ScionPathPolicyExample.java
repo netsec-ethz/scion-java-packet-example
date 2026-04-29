@@ -19,7 +19,6 @@ import java.net.InetAddress;
 import java.nio.ByteBuffer;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import org.scion.jpan.*;
 
 /**
@@ -43,7 +42,8 @@ public class ScionPathPolicyExample {
       channel.setPathPolicy(new OnlySwitzerland());
       ByteBuffer sendBuf = ByteBuffer.wrap(message.getBytes());
       channel.send(sendBuf, path);
-      System.out.println("The packet was sent via path: " + ScionUtil.toStringPath(path.getMetadata()));
+      System.out.println(
+          "The packet was sent via path: " + ScionUtil.toStringPath(path.getMetadata()));
     }
   }
 
@@ -58,7 +58,7 @@ public class ScionPathPolicyExample {
     }
 
     private boolean isPathOkay(Path path) {
-      for (PathMetadata.PathInterface pif : path.getMetadata().getInterfacesList()) {
+      for (PathMetadata.PathInterface pif : path.getMetadata().getInterfaces()) {
         int isd = ScionUtil.extractIsd(pif.getIsdAs());
         // Reject any path that goes outside Switzerland's ISD
         if (isd != ISD_SWITZERLAND) {
