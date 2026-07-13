@@ -3,9 +3,9 @@
 ## Send packet example
 
 This is a simple example project that uses [JPAN](https://github.com/scionproto-contrib/jpan) to
-send a packet to the [SCION packet analyzer](https://scionpacketinspector.netsec.ethz.ch).
+send a packet to the [SCION packet inspector](https://scionpacketinspector.netsec.ethz.ch).
 
-To try the example please download the stand-alone jar file through one of these options:
+To try out the example please download the stand-alone jar file through one of these options:
 - [download link to release section](https://github.com/netsec-ethz/scion-java-packet-example/releases/download/v0.5.0/packet-example-0.5.0.jar)
 - `wget https://github.com/netsec-ethz/scion-java-packet-example/releases/download/v0.5.0/packet-example-0.5.0.jar`
 
