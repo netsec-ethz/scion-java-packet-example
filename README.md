@@ -6,17 +6,17 @@ This is a simple example project that uses [JPAN](https://github.com/scionproto-
 send a packet to the [SCION packet analyzer](https://scionpacketinspector.netsec.ethz.ch).
 
 The easiest way to execute the example is
-to [download the stand-alone jar file](https://github.com/netsec-ethz/scion-java-packet-example/releases/download/v0.4.0/scion-packet-example-0.4.0-executable.jar)
+to [download the stand-alone jar file](https://github.com/netsec-ethz/scion-java-packet-example/releases/download/v0.5.0/packet-example-0.5.0.jar)
 and execute it from command line:
 
 ```
-java -jar scion-packet-example-0.4.0-executable.jar
+java -jar packet-example-0.5.0.jar
 ```
 
 You can also send a custom message string with
 
 ```
-java -jar scion-packet-example-0.4.0-executable.jar "A better message"
+java -jar packet-example-0.5.0.jar "A better message"
 ```
 
 ## Other examples
@@ -39,8 +39,8 @@ You can build your own executable jar file with
 mvn clean package -Pcreate-executable-example
 ```
 
-This creates a file `scion-packet-example-0.3.1-SNAPSHOT-executable.jar` (note the `-executable`) in
-`target/`.
+This creates a file `packet-example-0.5.1-SNAPSHOT.jar` in `target/`.
+(Note, the `scion-...` jar file is *not* executable)
 
 # Troubleshooting
 
@@ -56,7 +56,7 @@ You can execute the jar with the following property (on example of a search doma
 it obviously works only when you are in that very domain):
 
 ```
-java -Dorg.scion.dnsSearchDomains=<search domain> -jar scion-packet-example-<version>-executable.jar
+java -Dorg.scion.dnsSearchDomains=<search domain> -jar packet-example-<version>.jar
 ```
 
 ### Solution #2: Provide a discovery server
@@ -64,7 +64,7 @@ java -Dorg.scion.dnsSearchDomains=<search domain> -jar scion-packet-example-<ver
 You can directly set the IP:port of the discovery server:
 
 ```
-java -Dorg.scion.bootstrap.host=<IP of bootstrap server:8041> -jar scion-packet-example-<version>-executable.jar
+java -Dorg.scion.bootstrap.host=<IP of bootstrap server:8041> -jar packet-example-<version>.jar
 ```
 
 ### Solution #3: Provide a topology file
@@ -72,5 +72,5 @@ java -Dorg.scion.bootstrap.host=<IP of bootstrap server:8041> -jar scion-packet-
 If you have a topology file, you can do the following:
 
 ```
-java -Dorg.scion.bootstrap.topoFile=<yourTopologyFile.json> -jar scion-packet-example-<version>-executable.jar
+java -Dorg.scion.bootstrap.topoFile=<yourTopologyFile.json> -jar packet-example-<version>.jar
 ```

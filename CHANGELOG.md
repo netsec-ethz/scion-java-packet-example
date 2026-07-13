@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 - Updated dependencies on JPAN to commit eb02b01
+  [#18](https://github.com/netsec-ethz/scion-java-packet-example/pull/18)
+- 0.4.0 post-release
   [#17](https://github.com/netsec-ethz/scion-java-packet-example/pull/17)
 
 ## [0.4.0] - 2026-04-29
@@ -21,7 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Updated dependencies on JPAN and others
   [#16](https://github.com/netsec-ethz/scion-java-packet-example/pull/16)
-- 
+
 ### Fixed
 - Report proper error if no paths are found
   [#15](https://github.com/netsec-ethz/scion-java-packet-example/pull/15)
