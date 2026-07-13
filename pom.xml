@@ -83,7 +83,7 @@
         <dependency>
             <groupId>org.scion</groupId>
             <artifactId>jpan</artifactId>
-            <version>0.7.0</version>
+            <version>0.7.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
@@ -256,6 +256,8 @@
                                     <goal>shade</goal>
                                 </goals>
                                 <configuration>
+                                    <outputFile>target/packet-example-${project.version}.jar</outputFile>
+<!--                                    <outputFile>target/${project.artifactId}-${project.version}-executable.jar</outputFile>-->
                                     <shadedArtifactAttached>true</shadedArtifactAttached>
                                     <shadedClassifierName>executable</shadedClassifierName>
                                     <transformers>
