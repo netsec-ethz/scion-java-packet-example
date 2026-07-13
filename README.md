@@ -9,7 +9,7 @@ To try out the example please download the stand-alone jar file through one of t
 - [download link to release section](https://github.com/netsec-ethz/scion-java-packet-example/releases/download/v0.5.0/packet-example-0.5.0.jar)
 - `wget https://github.com/netsec-ethz/scion-java-packet-example/releases/download/v0.5.0/packet-example-0.5.0.jar`
 
-Then execute it (requires Java 1.8 or later:
+Then execute it (requires Java 1.8 or later):
 
 ```bash
 java -jar packet-example-0.5.0.jar
