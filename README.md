@@ -21,6 +21,8 @@ You can also send a custom message string with
 java -jar packet-example-0.5.0.jar "A better message"
 ```
 
+The message can be seen in the hex dump at the bottom of the SCION packet inspector page.
+
 ## Other examples
 
 The project contains other examples, but they do not come with an executable jar file:
