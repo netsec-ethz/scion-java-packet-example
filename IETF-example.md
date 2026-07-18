@@ -9,7 +9,10 @@ To try out the example please download the stand-alone jar file through one of t
 - [download link to release section](https://github.com/netsec-ethz/scion-java-packet-example/releases/download/v0.5.0/packet-example-0.5.0.jar)
 - `wget https://github.com/netsec-ethz/scion-java-packet-example/releases/download/v0.5.0/packet-example-0.5.0.jar`
 
-Then execute it (requires Java 1.8 or later):
+
+Then join the IETF's WLAN: **ietf-dual-stack**.
+
+Then execute the example (requires Java 1.8 or later):
 
 ```
 java -Dorg.scion.bootstrap.host=31.130.239.184 -jar jpan-cli.jar traceroute 64-2:0:9,0.0.0.0 "A better message"
