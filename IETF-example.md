@@ -6,7 +6,7 @@ This is a simple example project that uses [JPAN](https://github.com/scionproto-
 send a packet to the [SCION packet inspector](https://scionpacketinspector.netsec.ethz.ch).
 
 To try out the example please download the stand-alone jar file through one of these options:
-- [download link to release section](https://github.com/netsec-ethz/scion-java-packet-example/releases/download/v0.5.0/packet-example-0.5.0.jar)
+- [download link to release section](https://github.com/netsec-ethz/scion-java-packet-example/releases/download/v0.5.0/packet-example-0.5.0.jar), or
 - `wget https://github.com/netsec-ethz/scion-java-packet-example/releases/download/v0.5.0/packet-example-0.5.0.jar`
 
 
