@@ -40,11 +40,11 @@ java -Dorg.scion.bootstrap.host=scion-ietf126.ddns.net -jar jpan-cli.jar tracero
 ```
 
 Other destinations to try:
-- ETH 64-2:0:9
-- Cambridge 71-20965
-- Cloudscale 64-2:0:9c
-- CSCS 64-2:0:c
-- Korea University 71-2:0:4d
+- ETH `64-2:0:9`
+- Cambridge `71-20965`
+- Cloudscale `64-2:0:9c`
+- CSCS `64-2:0:c`
+- Korea University `71-2:0:4d`
 
 
 ## Other things to try
