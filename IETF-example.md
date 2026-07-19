@@ -21,6 +21,7 @@ Note: the bootstrap argument is only required because this is an experimental se
 
 
 ### JPAN CLI tool
+JPAN-CLI is a tool that allows echo, traceroute, showpaths, ... and other functionality, similar to the SCION CLI tool. JPAN-CLI is stand-alone based on JPAN and does not require any locally installed SCION software.
 
 ```
 wget https://github.com/netsec-ethz/jpan-cli/releases/download/v0.3.0/jpan-cli.jar
