@@ -39,7 +39,7 @@ Or do a traceroute:
 java -Dorg.scion.bootstrap.host=scion-ietf126.ddns.net -jar jpan-cli.jar traceroute 64-2:0:9,0.0.0.0
 ```
 
-Other locatoin to try:
+Other destinations to try:
 - ETH 64-2:0:9
 - Cambridge 71-20965
 - Cloudscale 64-2:0:9c
