@@ -34,6 +34,19 @@ Only 10 paths??? Well, let's pass a parameter to list the first 100 paths (or fe
 java -Dorg.scion.bootstrap.host=scion-ietf126.ddns.net -jar jpan-cli.jar showpaths 64-2:0:9 -m 100
 ```
 
+Or do a traceroute:
+```
+java -Dorg.scion.bootstrap.host=scion-ietf126.ddns.net -jar jpan-cli.jar traceroute 64-2:0:9,0.0.0.0
+```
+
+Other locatoin to try:
+- ETH 64-2:0:9
+- Cambridge 71-20965
+- Cloudscale 64-2:0:9c
+- CSCS 64-2:0:c
+- Korea University 71-2:0:4d
+
+
 ## Other things to try
 
 * JPAN [CLI tool](https://github.com/netsec-ethz/jpan-cli) with `ping`, `traceroute`, `showpaths`, ..
