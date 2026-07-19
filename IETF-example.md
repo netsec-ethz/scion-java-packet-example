@@ -21,7 +21,7 @@ Note: the bootstrap argument is only required because this is an experimental se
 
 
 ### JPAN CLI tool
-JPAN-CLI is a tool that allows echo, traceroute, showpaths, ... and other functionality, similar to the SCION CLI tool. JPAN-CLI is stand-alone based on JPAN and does not require any locally installed SCION software.
+[JPAN-CLI](https://github.com/netsec-ethz/jpan-cli) is a tool that allows echo, traceroute, showpaths, ... and other functionality, similar to the SCION CLI tool. JPAN-CLI is stand-alone based on JPAN and does not require any locally installed SCION software. Here are some examples you can run, but first, to download the jar file:
 
 ```
 wget https://github.com/netsec-ethz/jpan-cli/releases/download/v0.3.0/jpan-cli.jar
@@ -30,7 +30,7 @@ List the paths to ETH Zurich:
 ```
 java -Dorg.scion.bootstrap.host=scion-ietf126.ddns.net -jar jpan-cli.jar showpaths 64-2:0:9
 ```
-Only 10 paths??? Well, let's pass a parameter to list the first 100 paths (or fewer if not that many available)
+Only 10 paths??? Well, let's pass a parameter to list the first 100 paths:
 ```
 java -Dorg.scion.bootstrap.host=scion-ietf126.ddns.net -jar jpan-cli.jar showpaths 64-2:0:9 -m 100
 ```
