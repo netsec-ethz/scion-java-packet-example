@@ -49,7 +49,7 @@ Other destinations to try:
 - University of Virginia `71-225`
 - OvGU `71-2:0:4a`
 
-A complete list of currently available ASes can be found at the end of this document.
+A list of reachable ASes can be found at the end of this document.
 
 ## Other things to try
 
@@ -104,7 +104,7 @@ java -Dorg.scion.bootstrap.topoFile=<yourTopologyFile.json> -jar packet-example-
 ```
 
 
-# Complete List Of Reachable ASes
+# List Of Reachable ASes
 
 - 	71-225	University of Virginia
 - 	64-559	SWITCH
