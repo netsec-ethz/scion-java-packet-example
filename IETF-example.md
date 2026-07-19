@@ -45,6 +45,8 @@ Other destinations to try:
 - Cloudscale `64-2:0:9c`
 - CSCS `64-2:0:c`
 - Korea University `71-2:0:4d`
+- University of Virginia `71-225`
+- OvGU `71-2:0:4a`
 
 
 ## Other things to try
