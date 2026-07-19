@@ -70,17 +70,6 @@ The project contains other examples, but they do not come with an executable jar
   * [DatagramSocket client](src/main/java/org/scion/demo/pingpong/PingPongSocketClient.java)
   * [DatagramSocket server](src/main/java/org/scion/demo/pingpong/PingPongSocketServer.java)
 
-# Building your own executable jar
-
-You can build your own executable jar file with
-
-```
-mvn clean package -Pcreate-executable-example
-```
-
-This creates a file `packet-example-0.5.1-SNAPSHOT.jar` in `target/`.
-(Note, the `scion-...` jar file is *not* executable)
-
 # Troubleshooting
 
 ## No DNS search domain found. Please check your /etc/resolv.conf or similar.
