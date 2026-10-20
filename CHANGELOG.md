@@ -8,7 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-- Nothing yet
+### Changed
+- Updated dependencies to JPAN 0.8.0
+  [#20](https://github.com/netsec-ethz/scion-java-packet-example/pull/20)
 
 ## [0.5.0] - 2026-07-13
 
