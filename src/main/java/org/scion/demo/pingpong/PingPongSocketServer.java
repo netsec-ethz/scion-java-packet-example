@@ -15,25 +15,29 @@
 package org.scion.demo.pingpong;
 
 import java.io.IOException;
-import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
-import org.scion.jpan.Constants;
-import org.scion.jpan.ScionDatagramSocket;
+import org.scion.jpan.*;
 
 public class PingPongSocketServer {
 
   public static boolean PRINT = true;
 
-  public static final InetSocketAddress SERVER_ADDRESS =
+  public static final InetSocketAddress SERVER_SOCKET =
       new InetSocketAddress(InetAddress.getLoopbackAddress(), 44444);
+  public static final ScionSocketAddress SERVER_ADDRESS =
+      ScionSocketAddress.from(ScionUtil.parseIA("2-ff00:0:221"), SERVER_SOCKET.getAddress(), 44444);
   public static String TOPO_FILE = "topologies/default/ASff00_0_221/topology.json";
 
   public static void main(String[] args) throws IOException {
     System.setProperty(Constants.PROPERTY_BOOTSTRAP_TOPO_FILE, TOPO_FILE);
 
-    try (ScionDatagramSocket socket = new ScionDatagramSocket(SERVER_ADDRESS)) {
-      DatagramPacket packet = new DatagramPacket(new byte[100], 100);
+    try (ScionDatagramSocket socket = new ScionDatagramSocket(SERVER_SOCKET)) {
+      // ScionDatagramPacket is a drop-in replacement for DatagramPacket.
+      // It is also possible to use the DatagramPacket class, but that causes the socket to do
+      // internal path management and may opens a vulnerability where an attacker may "forget"
+      // some return paths.
+      ScionDatagramPacket packet = new ScionDatagramPacket(new byte[100], 100);
       println("Waiting for packet ... ");
       socket.receive(packet);
       String msg = new String(packet.getData(), packet.getOffset(), packet.getLength());
