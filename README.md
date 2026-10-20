@@ -48,6 +48,10 @@ This creates a file `packet-example-0.5.1-SNAPSHOT.jar` in `target/`.
 
 # Troubleshooting
 
+## No paths found
+
+This happens especially with the ping pong demos. Please refer to `pingpong/README.md`.
+
 ## No DNS search domain found. Please check your /etc/resolv.conf or similar.
 
 This happens, for example, on Windows when using a VPN.

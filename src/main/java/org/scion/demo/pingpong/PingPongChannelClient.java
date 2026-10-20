@@ -36,8 +36,8 @@ public class PingPongChannelClient {
   public static void main(String[] args) throws IOException {
     // The following setting attempts connection to the daemon of the AS "1-ff00:0:131"
     // in the scionproto ¨default" topology.
-    System.setProperty(Constants.DEFAULT_DAEMON, "127.0.0.77:30255");
-    println("Connecting to daemon: " + System.getProperty(Constants.DEFAULT_DAEMON));
+    System.setProperty(Constants.PROPERTY_DAEMON, "127.0.0.77:30255");
+    println("Connecting to daemon: " + System.getProperty(Constants.PROPERTY_DAEMON));
 
     try (ScionDatagramChannel channel = ScionDatagramChannel.open()) {
       channel.configureBlocking(true);

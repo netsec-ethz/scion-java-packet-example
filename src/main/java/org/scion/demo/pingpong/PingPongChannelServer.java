@@ -24,8 +24,10 @@ public class PingPongChannelServer {
 
   public static boolean PRINT = true;
 
-  public static final InetSocketAddress SERVER_ADDRESS =
+  public static final InetSocketAddress SERVER_SOCKET =
       new InetSocketAddress(InetAddress.getLoopbackAddress(), 44444);
+  public static final ScionSocketAddress SERVER_ADDRESS =
+      ScionSocketAddress.from(ScionUtil.parseIA("2-ff00:0:221"), SERVER_SOCKET.getAddress(), 44444);
   public static String TOPO_FILE = "topologies/default/ASff00_0_221/topology.json";
 
   public static void main(String[] args) throws IOException {
@@ -33,10 +35,10 @@ public class PingPongChannelServer {
     System.setProperty(Constants.PROPERTY_BOOTSTRAP_TOPO_FILE, TOPO_FILE);
 
     try (ScionDatagramChannel channel = ScionDatagramChannel.open()) {
-      channel.bind(SERVER_ADDRESS);
+      channel.bind(SERVER_SOCKET);
       ByteBuffer buffer = ByteBuffer.allocate(100);
       println("Waiting for packet ... ");
-      ScionSocketAddress responseAddress = channel.receive(buffer);
+      ScionPathAddress responseAddress = channel.receive(buffer);
       Path path = responseAddress.getPath();
       String msg = extractMessage(buffer);
       String remoteAddress = path.getRemoteAddress() + ":" + path.getRemotePort();

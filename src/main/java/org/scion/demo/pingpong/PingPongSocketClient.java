@@ -15,10 +15,7 @@
 package org.scion.demo.pingpong;
 
 import java.io.IOException;
-import java.net.DatagramPacket;
-import java.net.InetSocketAddress;
-import org.scion.jpan.Constants;
-import org.scion.jpan.ScionDatagramSocket;
+import org.scion.jpan.*;
 
 /**
  * Minimal ping pong client/server demo. The client sends a text message to a server and the server
@@ -35,20 +32,24 @@ public class PingPongSocketClient {
   public static void main(String[] args) throws IOException {
     // The following setting attempts connection to the daemon of the AS "1-ff00:0:131"
     // in the scionproto ¨default" topology.
-    System.setProperty(Constants.DEFAULT_DAEMON, "127.0.0.77:30255");
-    println("Connecting to daemon: " + System.getProperty(Constants.DEFAULT_DAEMON));
+    System.setProperty(Constants.PROPERTY_DAEMON, "127.0.0.77:30255");
+    println("Connecting to daemon: " + System.getProperty(Constants.PROPERTY_DAEMON));
 
-    InetSocketAddress serverAddress = PingPongSocketServer.SERVER_ADDRESS;
+    ScionSocketAddress serverAddress = PingPongSocketServer.SERVER_ADDRESS;
     try (ScionDatagramSocket socket = new ScionDatagramSocket(null)) {
       String msg = "Hello there!";
       byte[] sendBuf = msg.getBytes();
-      DatagramPacket request = new DatagramPacket(sendBuf, sendBuf.length, serverAddress);
+      Path path = Scion.defaultService().getPaths(serverAddress).get(0);
+      ScionDatagramPacket request = new ScionDatagramPacket(sendBuf, sendBuf.length, path);
       socket.send(request);
       println("Sent: " + msg);
 
       println("Receiving ... (" + socket.getLocalSocketAddress() + ")");
       byte[] buffer = new byte[512];
-      DatagramPacket response = new DatagramPacket(buffer, buffer.length);
+      // Using ScionDatagramPacket instead of DatagramPacket is preferred because it improves
+      // performance and avoids a vulnerability related to memory exhaustion,
+      // see PingPongSocketServer.
+      ScionDatagramPacket response = new ScionDatagramPacket(buffer, buffer.length);
       socket.receive(response);
 
       String pong = new String(buffer, 0, response.getLength());
