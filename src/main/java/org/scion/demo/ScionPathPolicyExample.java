@@ -39,7 +39,7 @@ public class ScionPathPolicyExample {
     Path path = Scion.defaultService().getPaths(dstIsdAs, ip, 30041).get(0);
 
     try (ScionDatagramChannel channel = ScionDatagramChannel.open()) {
-      channel.setPathPolicy(new OnlySwitzerland());
+      channel.getPathSelector().setPathPolicy(new OnlySwitzerland());
       ByteBuffer sendBuf = ByteBuffer.wrap(message.getBytes());
       channel.send(sendBuf, path);
       System.out.println(

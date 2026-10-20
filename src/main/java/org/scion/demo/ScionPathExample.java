@@ -15,7 +15,7 @@
 package org.scion.demo;
 
 import java.io.IOException;
-import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.util.List;
 import org.scion.jpan.*;
@@ -26,10 +26,9 @@ public class ScionPathExample {
       System.out.println("You can add a custom message as argument to the executable.");
     }
     String message = args.length == 0 ? "Hello there!" : args[0];
-    // send to https://scionpacketinspector.netsec.ethz.ch/
     long dstIsdAs = ScionUtil.parseIA("64-2:0:9");
-    InetAddress dstIP = InetAddress.getByName("129.132.175.104");
-    List<Path> paths = Scion.defaultService().getPaths(dstIsdAs, dstIP, 30041);
+    InetSocketAddress dst = new InetSocketAddress("scionpacketinspector.netsec.ethz.ch", 30041);
+    List<Path> paths = Scion.defaultService().getPaths(dstIsdAs, dst);
     if (paths.isEmpty()) {
       System.out.println("No paths found to: https://scionpacketinspector.netsec.ethz.ch/");
       System.out.println("  (using address: 64-2:0:9,129.132.175.104)");
@@ -37,10 +36,15 @@ public class ScionPathExample {
     }
 
     try (ScionDatagramChannel channel = ScionDatagramChannel.open()) {
-      channel.connect(paths.get(0));
       ByteBuffer sendBuf = ByteBuffer.wrap(message.getBytes());
-      channel.write(sendBuf);
-      PathMetadata meta = channel.getConnectionPath().getMetadata();
+      // It is recommended to select paths indirectly via a PathPolicy or possibly a PathSelector.
+      // However, if you want to use a specific paths without these, it can be done as follows,
+      // but there are some disadvantages:
+      // - If the path expires, it is not automatically renewed
+      // - If the path encounters a problem, it is not automatically replaced with a new path
+      Path myPath = paths.get(0); // Choose any specific path.
+      channel.send(sendBuf, myPath);
+      PathMetadata meta = myPath.getMetadata();
       System.out.println("The packet was sent via path: " + ScionUtil.toStringPath(meta));
     }
     System.out.println("The packet was sent to: https://scionpacketinspector.netsec.ethz.ch/");
