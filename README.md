@@ -6,19 +6,19 @@ This is a simple example project that uses [JPAN](https://github.com/scionproto-
 send a packet to the [SCION packet inspector](https://scionpacketinspector.netsec.ethz.ch).
 
 To try out the example please download the stand-alone jar file through one of these options:
-- [download link to release section](https://github.com/netsec-ethz/scion-java-packet-example/releases/download/v0.5.0/packet-example-0.5.0.jar)
-- `wget https://github.com/netsec-ethz/scion-java-packet-example/releases/download/v0.5.0/packet-example-0.5.0.jar`
+- [download link to release section](https://github.com/netsec-ethz/scion-java-packet-example/releases/download/v0.5.0/packet-example-0.6.0.jar)
+- `wget https://github.com/netsec-ethz/scion-java-packet-example/releases/download/v0.6.0/packet-example-0.6.0.jar`
 
 Then execute it (requires Java 1.8 or later):
 
 ```bash
-java -jar packet-example-0.5.0.jar
+java -jar packet-example-0.6.0.jar
 ```
 
 You can also send a custom message string with
 
 ```bash
-java -jar packet-example-0.5.0.jar "A better message"
+java -jar packet-example-0.6.0.jar "A better message"
 ```
 
 The message can be seen in the hex dump at the bottom of the SCION packet inspector page.
@@ -43,7 +43,7 @@ You can build your own executable jar file with
 mvn clean package -Pcreate-executable-example
 ```
 
-This creates a file `packet-example-0.5.1-SNAPSHOT.jar` in `target/`.
+This creates a file `packet-example-0.6.1-SNAPSHOT.jar` in `target/`.
 (Note, the `scion-...` jar file is *not* executable)
 
 # Troubleshooting
