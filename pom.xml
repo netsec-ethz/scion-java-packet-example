@@ -6,7 +6,7 @@
 
     <groupId>org.scion</groupId>
     <artifactId>scion-packet-example</artifactId>
-    <version>0.5.1-SNAPSHOT</version>
+    <version>0.6.0</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -284,6 +284,10 @@
                                             <excludes>
                                                 <exclude>META-INF/MANIFEST.MF</exclude>
                                                 <exclude>**/module-info.class</exclude>
+                                                <!-- Exclude signatures from signed jars -->
+                                                <exclude>META-INF/*.SF</exclude>
+                                                <exclude>META-INF/*.DSA</exclude>
+                                                <exclude>META-INF/*.RSA</exclude>
                                             </excludes>
                                         </filter>
                                     </filters>
