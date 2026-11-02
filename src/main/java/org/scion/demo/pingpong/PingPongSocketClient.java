@@ -31,16 +31,16 @@ public class PingPongSocketClient {
 
   public static void main(String[] args) throws IOException {
     // The following setting attempts connection to the daemon of the AS "1-ff00:0:131"
-    // in the scionproto ¨default" topology.
+    // in the scionproto "default" topology.
     System.setProperty(Constants.PROPERTY_DAEMON, "127.0.0.77:30255");
     println("Connecting to daemon: " + System.getProperty(Constants.PROPERTY_DAEMON));
 
     ScionSocketAddress serverAddress = PingPongSocketServer.SERVER_ADDRESS;
     try (ScionDatagramSocket socket = new ScionDatagramSocket(null)) {
+      socket.connect(serverAddress);
       String msg = "Hello there!";
       byte[] sendBuf = msg.getBytes();
-      Path path = Scion.defaultService().getPaths(serverAddress).get(0);
-      ScionDatagramPacket request = new ScionDatagramPacket(sendBuf, sendBuf.length, path);
+      ScionDatagramPacket request = new ScionDatagramPacket(sendBuf, sendBuf.length);
       socket.send(request);
       println("Sent: " + msg);
 
