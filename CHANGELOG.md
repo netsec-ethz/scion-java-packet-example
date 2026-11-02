@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   [#20](https://github.com/netsec-ethz/scion-java-packet-example/pull/20)
 - Fixed broken pingpong examples
   [#21](https://github.com/netsec-ethz/scion-java-packet-example/pull/21)
+- Updated dependencies to JPAN 0.8.1
+  [#22](https://github.com/netsec-ethz/scion-java-packet-example/pull/22)
 
 ## [0.5.0] - 2026-07-13
 
